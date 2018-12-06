@@ -1,8 +1,10 @@
 package ru.kpfu.itis.teamgbe.gameengine;
 
+import java.awt.*;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	    GameWindow window = new GameWindow("MyWindow",800,600,60);
     }
 }
