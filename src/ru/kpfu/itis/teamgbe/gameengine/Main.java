@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Game game = new Game(10,10);
-	    GameWindow window = new GameWindow("MyWindow",800,600,0.4, game);
+	    GameWindow window = new GameWindow("MyWindow",800,600,20, game);
     }
 }
