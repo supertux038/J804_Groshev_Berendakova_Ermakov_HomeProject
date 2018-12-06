@@ -21,5 +21,11 @@ public class Cell {
         this.color = color;
     }
 
+    public String getText() {
+        return text;
+    }
 
+    public void setText(String text) {
+        this.text = text;
+    }
 }
