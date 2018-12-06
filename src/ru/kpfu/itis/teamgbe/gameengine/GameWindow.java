@@ -17,6 +17,7 @@ public class GameWindow extends JFrame {
         this.defaultHeight = defaultHeight;
         this.setBounds(0,0, defualtWidth, defaultHeight);
         this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         panel = new JPanel();
         panel.setBackground(Color.GRAY);
         this.getContentPane().add(panel);
