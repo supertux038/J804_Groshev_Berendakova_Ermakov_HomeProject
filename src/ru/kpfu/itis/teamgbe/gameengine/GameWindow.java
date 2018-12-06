@@ -27,6 +27,7 @@ public class GameWindow extends JFrame {
                 draw();
             }
         });
+        timer.start();
     }
 
     private void draw() {
