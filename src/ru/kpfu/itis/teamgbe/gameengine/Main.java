@@ -5,6 +5,7 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args) {
-	    GameWindow window = new GameWindow("MyWindow",800,600,60);
+        Game game = new Game(10,10);
+	    GameWindow window = new GameWindow("MyWindow",800,600,0.4, game);
     }
 }

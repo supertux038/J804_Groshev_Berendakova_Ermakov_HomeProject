@@ -7,6 +7,8 @@ public class Cell {
     private String text;
 
     public Cell() {
+        this.color = new Color(0,100,0);
+        this.text = "";
     }
 
     public Cell(Color color) {
