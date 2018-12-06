@@ -12,7 +12,7 @@ public class GameWindow extends JFrame {
     private Timer timer;
     private final Game game;
 
-    public  GameWindow(String windowLabel, int defaultWidth, int defaultHeight, Game game) {
+    public GameWindow(String windowLabel, int defaultWidth, int defaultHeight, int fps, Game game) {
         super(windowLabel);
         this.game = game;
         this.setBounds(0,0, defaultWidth, defaultHeight);
@@ -21,19 +21,7 @@ public class GameWindow extends JFrame {
         panel = new JPanel();
         panel.setBackground(Color.GRAY);
         this.getContentPane().add(panel);
-        draw();
-    }
-
-    public GameWindow(String windowLabel, int defaultWidth, int defaultHeight, double fps, Game game) {
-        super(windowLabel);
-        this.game = game;
-        this.setBounds(0,0, defaultWidth, defaultHeight);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        panel = new JPanel();
-        panel.setBackground(Color.GRAY);
-        this.getContentPane().add(panel);
-        timer = new Timer( (int)(1000 / fps), new ActionListener() {
+        timer = new Timer((1000 / fps), new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 draw();
@@ -43,16 +31,16 @@ public class GameWindow extends JFrame {
     }
 
     public void draw() {
+        //creating imageBuffer to swap it at a moment to reduce fps flicker
         BufferedImage bufferedImage = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
         Graphics bufferedImageGraphics = bufferedImage.createGraphics();
-        //Graphics bufferedImageGraphics = panel.getGraphics();
-        bufferedImageGraphics.clearRect(0,0,panel.getWidth(), panel.getHeight());
         int cellWidth = panel.getWidth()/game.getWidth();
         int cellHeight = panel.getHeight()/game.getHeight();
 
+        //drawing cells and its fields
         for(int i = 0; i < game.getHeight(); i++) {
             for(int j = 0; j < game.getWidth(); j++) {
-                //game.gameField[i][j].setColor(new Color(new Random().nextInt(255),new Random().nextInt(255),new Random().nextInt(255)));
+                game.gameField[i][j].setColor(new Color(new Random().nextInt(255),new Random().nextInt(255),new Random().nextInt(255)));
                 bufferedImageGraphics.setColor(game.gameField[i][j].getColor());
                 bufferedImageGraphics.fillRect(i*cellWidth, j*cellHeight, cellWidth, cellHeight);
                 bufferedImageGraphics.setColor(Color.BLACK);
@@ -60,6 +48,7 @@ public class GameWindow extends JFrame {
             }
         }
 
+        //drawing grid
         bufferedImageGraphics.setColor(Color.BLACK);
         for(int i = 1; i < game.getWidth(); i++) {
             bufferedImageGraphics.drawLine(i*cellWidth, 0, i*cellWidth, panel.getHeight());
@@ -70,6 +59,7 @@ public class GameWindow extends JFrame {
 
         bufferedImageGraphics.dispose();
 
+        //swapping buffers
         Graphics panelGraphics = panel.getGraphics();
         panelGraphics.drawImage(bufferedImage,0,0, null);
         panelGraphics.dispose();
