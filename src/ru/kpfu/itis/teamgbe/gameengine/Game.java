@@ -2,27 +2,25 @@ package ru.kpfu.itis.teamgbe.gameengine;
 
 public class Game {
     public Cell[][] gameField;
-    private final int height;
-    private final int width;
+    private final int HEIGHT;
+    private final int WIDTH;
 
-    public Game(int height, int width) {
-        this.height = height;
-        this.width = width;
-        gameField = new Cell[height][width];
-        for(int i = 0; i < height; i++) {
-            for(int j = 0; j < width; j++) {
-                Cell c = new Cell();
-                c.setText(i + " " + j);
-                gameField[i][j] = c;
+    public Game(int HEIGHT, int WIDTH) {
+        this.HEIGHT = HEIGHT;
+        this.WIDTH = WIDTH;
+        gameField = new Cell[HEIGHT][WIDTH];
+        for(int i = 0; i < HEIGHT; i++) {git
+            for(int j = 0; j < WIDTH; j++) {
+                gameField[i][j] = new Cell();
             }
         }
     }
 
-    public int getHeight() {
-        return height;
+    public int getHEIGHT() {
+        return HEIGHT;
     }
 
-    public int getWidth() {
-        return width;
+    public int getWIDTH() {
+        return WIDTH;
     }
 }
