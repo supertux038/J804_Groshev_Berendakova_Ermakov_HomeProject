@@ -3,12 +3,12 @@ package ru.kpfu.itis.teamgbe.gameengine;
 import java.awt.*;
 
 public class Cell {
-    private final Color DEFAULTCOLOR = Color.WHITE;
+    private final Color DEFAULT_COLOR = Color.WHITE;
     private Color color;
     private String text;
 
     public Cell() {
-        this.color = DEFAULTCOLOR;
+        this.color = DEFAULT_COLOR;
         this.text = "";
     }
     public Cell(Color color) {

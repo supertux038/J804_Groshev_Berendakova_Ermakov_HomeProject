@@ -9,7 +9,7 @@ public class Game {
         this.HEIGHT = HEIGHT;
         this.WIDTH = WIDTH;
         gameField = new Cell[HEIGHT][WIDTH];
-        for(int i = 0; i < HEIGHT; i++) {git
+        for(int i = 0; i < HEIGHT; i++) {
             for(int j = 0; j < WIDTH; j++) {
                 gameField[i][j] = new Cell();
             }

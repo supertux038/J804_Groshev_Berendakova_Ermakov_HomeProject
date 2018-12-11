@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.util.TimerTask;
 
 public class Main {
 
@@ -23,6 +24,13 @@ public class Main {
             }
         });
         timer.start();
+        java.util.Timer timer1 = new java.util.Timer();
+        timer1.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                game.gameField[5][5].setColor(new Color(new Random().nextInt(255),new Random().nextInt(255),new Random().nextInt(255)));
+            }
+        }, 1000,1000);
 
     }
 }
