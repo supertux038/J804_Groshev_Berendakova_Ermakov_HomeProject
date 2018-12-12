@@ -6,6 +6,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
+/**
+ * The main window drawing class
+ * It implements all the logics connected with displaing pixels and colors
+ * @author Hyperbot
+ * @version 1.0
+ */
 public class GameWindow extends JFrame {
     private JPanel panel;
     private Timer timer;
@@ -13,26 +19,17 @@ public class GameWindow extends JFrame {
     private boolean gridEnabled = true;
     private int gridThickness = 1;
     private boolean coordinatesEnabled = true;
-
-    public Color getGridColor() {
-        return gridColor;
-    }
-
-    public void setGridColor(Color gridColor) {
-        this.gridColor = gridColor;
-    }
-
-    public Color getTextColor() {
-        return textColor;
-    }
-
-    public void setTextColor(Color textColor) {
-        this.textColor = textColor;
-    }
-
     private Color gridColor = Color.BLACK;
     private Color textColor = Color.BLACK;
 
+    /**
+     * the main constructor
+     * @param windowLabel the headline of the form which user sees
+     * @param defaultWidth width in pixels with which window would appear (only appear, width can change during runtime)
+     * @param defaultHeight height in pixels with which window would appear (only appear, height can change during runtime)
+     * @param fps frames per second, how fast would the window be redrawn
+     * @param game the Game class instance, that would be drawn with this window
+     */
     public GameWindow(String windowLabel, int defaultWidth, int defaultHeight, int fps, Game game) {
         super(windowLabel);
         this.game = game;
@@ -51,30 +48,89 @@ public class GameWindow extends JFrame {
         timer.start();
     }
 
+    /**
+     * getter for the color of grid
+     * @return the color of the grid
+     */
+    public Color getGridColor() {
+        return gridColor;
+    }
+
+    /**
+     * setter for the color of grid
+     * @param gridColor the color the grid will be
+     */
+    public void setGridColor(Color gridColor) {
+        this.gridColor = gridColor;
+    }
+
+    /**
+     * getter for the color of text
+     * @return the color of text
+     */
+    public Color getTextColor() {
+        return textColor;
+    }
+
+    /**
+     * setter for the color of text
+     * @param textColor the color the text will be
+     */
+    public void setTextColor(Color textColor) {
+        this.textColor = textColor;
+    }
+
+    /**
+     * getter for gridEnabled boolean
+     * @return true if grid drawing is enabled, else if disabled
+     */
     public boolean isGridEnabled() {
         return gridEnabled;
     }
 
+    /**
+     * setter for gridEnabled boolean
+     * @param gridEnabled true to enable grid, false to disable
+     */
     public void setGridEnabled(boolean gridEnabled) {
         this.gridEnabled = gridEnabled;
     }
 
+    /**
+     * getter for gridThickness
+     * @return int, meaning width of grid lines in pixels
+     */
     public int getGridThickness() {
         return gridThickness;
     }
 
+    /**
+     * setter for gridThickness
+     * @param gridThickness int, meaning width of grid lines in pixels
+     */
     public void setGridThickness(int gridThickness) {
         this.gridThickness = gridThickness;
     }
 
+    /**
+     * getter for coordinatesEnabled boolean
+     * @return true if numbers and letters on the edges are drawn, else if are not drawn
+     */
     public boolean isCoordinatesEnabled() {
         return coordinatesEnabled;
     }
 
+    /**
+     * setter for coordinateEnabled boolean
+     * @param coordinatesEnabled true to enable numbers and letters on the edges, false to disable
+     */
     public void setCoordinatesEnabled(boolean coordinatesEnabled) {
         this.coordinatesEnabled = coordinatesEnabled;
     }
 
+    /** Function that draws new frame. It's called *fps* times per second (fps is set in constructor and can't be changed during the runtime)
+     *
+     */
     public void draw() {
         //creating imageBuffer to swap it at a moment to reduce fps flicker
         BufferedImage bufferedImage = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_RGB);
@@ -103,6 +159,7 @@ public class GameWindow extends JFrame {
             }
         }
 
+        //drawing coordinates
         if(coordinatesEnabled) {
             bufferedImageGraphics.setColor(textColor);
             for (int i = 0; i < game.getHEIGHT(); i++) {

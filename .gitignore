@@ -2,6 +2,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
+META-INF/
 J804_Groshev_Berendakova_Ermakov_HomeProject.iml
 .idea/
 .idea/**/workspace.xml

@@ -11,26 +11,18 @@ public class Main {
 
     public static void main(String[] args) {
         //tests
-        Game game = new Game(10,10);
-	    GameWindow window = new GameWindow("MyWindow",800,600,30, game);
-	    game.gameField[0][0].setText("Я самая первая клетка");
-	    game.gameField[1][1].setColor(Color.red);
-	    game.gameField[1][1].setText("А я красная");
-	    game.gameField[2][3].setText("Дискотека");
+        Game game = new Game(10, 10);
+        GameWindow window = new GameWindow("MyWindow", 800, 600, 30, game);
+        game.gameField[0][0].setText("Я самая первая клетка");
+        game.gameField[1][1].setColor(Color.red);
+        game.gameField[1][1].setText("А я красная");
+        game.gameField[2][3].setText("Дискотека");
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                game.gameField[2][3].setColor(new Color(new Random().nextInt(255),new Random().nextInt(255),new Random().nextInt(255)));
+                game.gameField[2][3].setColor(new Color(new Random().nextInt(255), new Random().nextInt(255), new Random().nextInt(255)));
             }
         });
         timer.start();
-        java.util.Timer timer1 = new java.util.Timer();
-        timer1.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                game.gameField[5][5].setColor(new Color(new Random().nextInt(255),new Random().nextInt(255),new Random().nextInt(255)));
-            }
-        }, 1000,1000);
-
     }
 }

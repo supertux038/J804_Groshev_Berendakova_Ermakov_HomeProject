@@ -2,6 +2,11 @@ package ru.kpfu.itis.teamgbe.gameengine;
 
 import java.awt.*;
 
+/**
+ * Class, that stores information about a cell
+ * @author Alexander Ermakov aka supertux038
+ * @version 1.0
+ */
 public class Cell {
     private final Color DEFAULT_COLOR = Color.WHITE;
     private Color color;
