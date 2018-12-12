@@ -11,7 +11,7 @@ public class Game {
      * Two dimensional array of cells, storing the state of each cell in current game situation
      * USE WITH ACCURACY!
      */
-    public Cell[][] gameField;
+    public Cell[][] gameField; //is it possible to make it secure?
     private final int HEIGHT;
     private final int WIDTH;
 
