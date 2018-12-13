@@ -2,7 +2,7 @@
 A simple library to draw flat gamefield. Made as a project for studying.
 ## Getting started
 ### Installation
-Just clone the repo or download a zip and compile it. Nothing special.
+Just clone the repo or download a zip and compile it. Nothing special. Or see our releases on Github and download jar.
 ### First tests
 Run this and you should see an emty gamefield appear.
 ```
