@@ -1,6 +1,7 @@
 package ru.kpfu.itis.teamgbe.gameengine;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Class, that stores information about a cell
@@ -11,6 +12,15 @@ public class Cell {
     private final Color DEFAULT_COLOR = Color.WHITE;
     private Color color;
     private String text;
+    private BufferedImage image;
+
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
 
     public Cell() {
         this.color = DEFAULT_COLOR;

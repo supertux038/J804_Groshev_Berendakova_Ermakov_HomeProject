@@ -149,6 +149,10 @@ public class BufferedImageGameDrawer {
             for(int j = 0; j < gamefield.getWIDTH(); j++) {
                 bufferedImageGraphics.setColor(gamefield.gameField[i][j].getColor());
                 bufferedImageGraphics.fillRect(i*cellWidth, j*cellHeight, cellWidth, cellHeight);
+                if(gamefield.gameField[i][j].getImage() != null) {
+                    bufferedImageGraphics.drawImage(gamefield.gameField[i][j].getImage(),i*cellWidth,j*cellHeight,
+                            cellWidth, cellHeight, null  );
+                }
                 bufferedImageGraphics.setColor(textColor);
                 bufferedImageGraphics.drawString(gamefield.gameField[i][j].getText(),i*cellWidth,j*cellHeight + cellHeight/2);
             }
