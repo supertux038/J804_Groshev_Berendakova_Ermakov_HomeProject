@@ -5,7 +5,7 @@ package ru.kpfu.itis.teamgbe.gameengine;
  * @author Alexander Ermakov aka supertux038
  * @version 1.0
  */
-public class Game {
+public class Gamefield {
 
     /**
      * Two dimensional array of cells, storing the state of each cell in current game situation
@@ -20,7 +20,7 @@ public class Game {
      * @param HEIGHT height of gamefield in cells
      * @param WIDTH width of gamefield in cells
      */
-    public Game(int HEIGHT, int WIDTH) {
+    public Gamefield(int HEIGHT, int WIDTH) {
         this.HEIGHT = HEIGHT;
         this.WIDTH = WIDTH;
         gameField = new Cell[HEIGHT][WIDTH];

@@ -1,5 +1,6 @@
 package ru.kpfu.itis.teamgbe.gameengine;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -17,62 +18,123 @@ public class BufferedImageGameDrawer {
     private boolean coordinatesEnabled = true;
     private Color gridColor = Color.BLACK;
     private Color textColor = Color.BLACK;
-    private Font font;
+    /**
+     * A font with which coordinates and text in cells are drawn
+     */
+    private Font font = UIManager.getDefaults().getFont("Label.font");
 
+    /**
+     * Getter for the font
+     * @return font with which coordinates and text in cells are now drawn
+     */
     public Font getFont() {
         return font;
     }
 
+    /**
+     * Setter the font
+     * @param font font you want coordinates and text in cells to be drawn
+     */
     public void setFont(Font font) {
         this.font = font;
     }
 
+    /**
+     * Getter for gridEnabled boolean
+     * @return true if grid is enabled, else false
+     */
     public boolean isGridEnabled() {
         return gridEnabled;
     }
 
+    /**
+     * Setter for gridEnabled boolean
+     * @param gridEnabled true to enable grid, false to disable
+     */
     public void setGridEnabled(boolean gridEnabled) {
         this.gridEnabled = gridEnabled;
     }
 
+    /**
+     * Getter for grid thickness in pixels
+     * @return grid thickness in pixels
+     */
     public int getGridThickness() {
         return gridThickness;
     }
 
+    /**
+     * Setter for grid thickness in pixels
+     * @param gridThickness grid thickness in pixels to display
+     */
     public void setGridThickness(int gridThickness) {
         this.gridThickness = gridThickness;
     }
 
+    /**
+     * Getter for coordinatesEnabled boolean
+     * @return true if coordinates are drawn on edges, false if aren't
+     */
     public boolean isCoordinatesEnabled() {
         return coordinatesEnabled;
     }
 
+    /**
+     * Setter for coordinatesEnabled boolean
+     * @param coordinatesEnabled true to enable drawing numbers and letters (coordinates) on the edges of the image, false to  disable
+     */
     public void setCoordinatesEnabled(boolean coordinatesEnabled) {
         this.coordinatesEnabled = coordinatesEnabled;
     }
 
+    /**
+     * Getter for grid color
+     * @return grid colot
+     */
     public Color getGridColor() {
         return gridColor;
     }
 
+    /**
+     * Setter for grid colot
+     * @param gridColor color you want grid to be drawn with
+     */
     public void setGridColor(Color gridColor) {
         this.gridColor = gridColor;
     }
 
+    /**
+     * Getter for text and coordinates color
+     * @return color, that coordinates and text in cells are drawn with
+     */
     public Color getTextColor() {
         return textColor;
     }
 
+    /**
+     * Setter for text and coordinates color
+     * @param textColor color, that coordinates and text in cells you want to be drawn with
+     */
     public void setTextColor(Color textColor) {
         this.textColor = textColor;
     }
 
+    /**
+     * Constructor for GameDrawer
+     * @param width width of image in pixels to be drawn
+     * @param height height of image in pixels to be drawn
+     * @param gamefield gamefield to draw
+     */
     //maybe we don't need constructor and should give arguments straight to drawGamefield?
     public BufferedImageGameDrawer(int width, int height, Gamefield gamefield) {
         bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         this.gamefield = gamefield;
     }
 
+    /**
+     * A method that draws new "frame" showing current situation on gamefield
+     * @return BufferedImage, containing frame of gamefield
+     */
     public BufferedImage drawGamefield() {
         Graphics bufferedImageGraphics = bufferedImage.createGraphics();
         int cellWidth = bufferedImage.getWidth()/ gamefield.getWIDTH();
