@@ -46,6 +46,6 @@ We use Intelij Idea to do everything. We hope our project would work in other en
 ## Contributing
 Halp us
 ## Authors
-*Vitaly Groshev aka Hyperbot - main developer*
-*Alexander Ermakov aka supertux038 - developer*
-*Tanya Berendakova - git expert, professional advisor*
+Vitaly Groshev aka Hyperbot - main developer \n
+Alexander Ermakov aka supertux038 - developer \n
+Tanya Berendakova - git expert, professional advisor
