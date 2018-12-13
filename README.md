@@ -33,13 +33,7 @@ gamefield.gameField[0][0].setText("Я самая первая клетка");
 gamefield.gameField[1][1].setColor(Color.red);
 gamefield.gameField[1][1].setText("А я красная");
 gamefield.gameField[2][3].setText("Дискотека");
-Timer timer = new Timer(100, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          gamefield.gameField[2][3].setColor(new Color(new Random().nextInt(255), new Random().nextInt(255), new Random().nextInt(255)));
-      }
-});
-timer.start();
+gamefield.gameField[1][4].setImage(ImageIO.read(new File("img.jpg")));
 ```
 ## Built with
 We use Intelij Idea to do everything. We hope our project would work in other environments.
