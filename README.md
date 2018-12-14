@@ -19,13 +19,14 @@ try {
     e.printStackTrace();
 }
 ```
-GameWindow class has many parameters to change. Try them.
+GameWindow class has many parameters to change. Try them. BufferedImageGameDrawer has the same parameters.
 ```
 window.setCoordinatesEnabled(false);
 window.setGridColor(Color.blue);
 window.setGridEnabled(false);
 window.setGridThickness(4);
 window.setTextColor(Color.LIGHT_GRAY);
+window.setTextInCellsEnabled(false);
 ```
 To change situation on gamefield call methods of cells inside gamefield array in gamefield class.
 ```
