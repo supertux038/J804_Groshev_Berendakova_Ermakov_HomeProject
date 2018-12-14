@@ -165,7 +165,9 @@ public class BufferedImageGameDrawer {
                 }
                 if(textInCellsEnabled) {
                     bufferedImageGraphics.setColor(textColor);
-                    bufferedImageGraphics.drawString(gamefield.gameField[i][j].getText(), i * cellWidth, j * cellHeight + cellHeight / 2);
+                    //bufferedImageGraphics.drawString(gamefield.gameField[i][j].getText(), i * cellWidth, j * cellHeight + cellHeight / 2);
+                    drawCenteredString(bufferedImageGraphics, cellWidth, cellHeight,
+                            gamefield.gameField[i][j].getText(),i * cellWidth,j * cellHeight);
                 }
             }
         }
@@ -194,5 +196,12 @@ public class BufferedImageGameDrawer {
 
         bufferedImageGraphics.dispose();
         return bufferedImage;
+    }
+
+    private void drawCenteredString(Graphics g, int cellWidth, int cellHeight, String s, int origX, int origY) {
+        FontMetrics fm = g.getFontMetrics();
+        int x = (cellWidth - fm.stringWidth(s)) / 2;
+        int y = (fm.getAscent() + (cellHeight - (fm.getAscent() + fm.getDescent())) / 2);
+        g.drawString(s,origX + x,origY + y);
     }
 }
