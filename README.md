@@ -19,7 +19,7 @@ try {
     e.printStackTrace();
 }
 ```
-GameWindow class has many parameters to change. Try them. Probably they will be added soon to BufferedImageGameDrawer.
+GameWindow class has many parameters to change. Try them.
 ```
 window.setCoordinatesEnabled(false);
 window.setGridColor(Color.blue);
