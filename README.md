@@ -40,6 +40,7 @@ gamefield.gameField[1][4].setImage(ImageIO.read(new File("img.jpg")));
 We use Intelij Idea to do everything. We hope our project would work in other environments.
 ## Contributing
 Halp us
+
 Now serious. Write issues, if you discover any bug. If you wish to create a pull request, find me (Vitaly) in VK or email me.
 ## Authors
 Vitaly Groshev aka Hyperbot - main developer
