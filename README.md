@@ -2,7 +2,7 @@
 A simple library to draw flat gamefield. Made as a project for studying.
 ## Getting started
 ### Installation
-Just clone the repo or download a zip and compile it. Nothing special.
+Just clone the repo or download a zip and compile it. Nothing special. Or see our releases on Github and download jar.
 ### First tests
 Run this and you should see an emty gamefield appear.
 ```
@@ -33,18 +33,13 @@ gamefield.gameField[0][0].setText("Я самая первая клетка");
 gamefield.gameField[1][1].setColor(Color.red);
 gamefield.gameField[1][1].setText("А я красная");
 gamefield.gameField[2][3].setText("Дискотека");
-Timer timer = new Timer(100, new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-          gamefield.gameField[2][3].setColor(new Color(new Random().nextInt(255), new Random().nextInt(255), new Random().nextInt(255)));
-      }
-});
-timer.start();
+gamefield.gameField[1][4].setImage(ImageIO.read(new File("img.jpg")));
 ```
 ## Built with
 We use Intelij Idea to do everything. We hope our project would work in other environments.
 ## Contributing
 Halp us
+Now serious. Write issues, if you discover any bug. If you wish to create a pull request, find me (Vitaly) in VK or email me.
 ## Authors
 Vitaly Groshev aka Hyperbot - main developer
 
