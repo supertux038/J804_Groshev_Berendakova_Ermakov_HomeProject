@@ -140,6 +140,22 @@ public class GameWindow extends JFrame {
         this.coordinatesEnabled = coordinatesEnabled;
     }
 
+    /**
+     * getter for textInCellsEnabled boolean
+     * @return true if text is enabled, false if disabled
+     */
+    public boolean isTextInCellsEnabled() {
+        return textInCellsEnabled;
+    }
+
+    /**
+     * setter for textInCellsEnabled boolean
+     * @param textInCellsEnabled true to enable text drawing in cells, false to disable
+     */
+    public void setTextInCellsEnabled(boolean textInCellsEnabled) {
+        this.textInCellsEnabled = textInCellsEnabled;
+    }
+
     /** Function that draws new frame. It's called *fps* times per second (fps is set in constructor and can't be changed during the runtime)
      *
      */
@@ -150,7 +166,7 @@ public class GameWindow extends JFrame {
         bufferedImageGameDrawer.setGridEnabled(gridEnabled);
         bufferedImageGameDrawer.setGridThickness(gridThickness);
         bufferedImageGameDrawer.setTextColor(textColor);
-        bufferedImageGameDrawer.setTextInCellsEnabled(true);
+        bufferedImageGameDrawer.setTextInCellsEnabled(textInCellsEnabled);
         if(font != null) {
             bufferedImageGameDrawer.setFont(font);
         }

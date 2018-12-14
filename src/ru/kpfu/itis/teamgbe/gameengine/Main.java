@@ -20,6 +20,7 @@ public class Main {
         gamefield.gameField[1][1].setColor(Color.red);
         gamefield.gameField[1][1].setText("А я красная");
         gamefield.gameField[2][3].setText("Дискотека");
+
         Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
