@@ -27,5 +27,10 @@ public class Main {
             }
         });
         timer.start();
+        try {
+            gamefield.gameField[1][4].setImage(ImageIO.read(new File("C:/im.jpg")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

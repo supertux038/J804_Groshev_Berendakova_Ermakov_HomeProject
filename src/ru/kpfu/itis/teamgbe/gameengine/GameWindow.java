@@ -19,6 +19,7 @@ public class GameWindow extends JFrame {
     private boolean gridEnabled = true;
     private int gridThickness = 1;
     private boolean coordinatesEnabled = true;
+    private boolean textInCellsEnabled = true;
     private Color gridColor = Color.BLACK;
     private Color textColor = Color.BLACK;
     private Font font;
@@ -149,6 +150,7 @@ public class GameWindow extends JFrame {
         bufferedImageGameDrawer.setGridEnabled(gridEnabled);
         bufferedImageGameDrawer.setGridThickness(gridThickness);
         bufferedImageGameDrawer.setTextColor(textColor);
+        bufferedImageGameDrawer.setTextInCellsEnabled(true);
         if(font != null) {
             bufferedImageGameDrawer.setFont(font);
         }

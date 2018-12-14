@@ -16,10 +16,20 @@ public class BufferedImageGameDrawer {
     private boolean gridEnabled = true;
     private int gridThickness = 1;
     private boolean coordinatesEnabled = true;
+    private boolean textInCellsEnabled = true;
     private Color gridColor = Color.BLACK;
     private Color textColor = Color.BLACK;
+
+    public boolean isTextInCellsEnabled() {
+        return textInCellsEnabled;
+    }
+
+    public void setTextInCellsEnabled(boolean textInCellsEnabled) {
+        this.textInCellsEnabled = textInCellsEnabled;
+    }
+
     /**
-     * A font with which coordinates and text in cells are drawn
+     * A font with which coordinates and text in cells are drawn with. System default in the begining.
      */
     private Font font = UIManager.getDefaults().getFont("Label.font");
 
@@ -153,8 +163,10 @@ public class BufferedImageGameDrawer {
                     bufferedImageGraphics.drawImage(gamefield.gameField[i][j].getImage(),i*cellWidth,j*cellHeight,
                             cellWidth, cellHeight, null  );
                 }
-                bufferedImageGraphics.setColor(textColor);
-                bufferedImageGraphics.drawString(gamefield.gameField[i][j].getText(),i*cellWidth,j*cellHeight + cellHeight/2);
+                if(textInCellsEnabled) {
+                    bufferedImageGraphics.setColor(textColor);
+                    bufferedImageGraphics.drawString(gamefield.gameField[i][j].getText(), i * cellWidth, j * cellHeight + cellHeight / 2);
+                }
             }
         }
 
